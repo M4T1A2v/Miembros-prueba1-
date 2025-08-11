@@ -118,7 +118,7 @@ function renderMiembrosForm(miembros) {
         `;
     });
     miembrosContainer.innerHTML += `
-        <button onclick="agregarCampoMiembro()" style="margin-top:8px;">Agregar Campo Miembro</button>
+        <button onclick="agregarCampoMiembro()" style="margin-top:8px;">Agregar otro miembro</button>
     `;
 }
 window.agregarCampoMiembro = function() {
@@ -134,4 +134,5 @@ window.agregarCampoMiembro = function() {
 window.onclick = function(event) {
     if (event.target == modalSucursal) modalSucursal.style.display = "none";
 };
+
 renderSucursales();
