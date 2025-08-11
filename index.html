@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Sucursales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Iglesia</h1>
+        <button id="btnAgregarSucursal" class="btnAgregarSucursal">Agregar Sucursal</button>
+        <div id="sucursales"></div>
+    </div>
+
+    <!-- Modal para agregar/editar sucursal -->
+    <div id="modalSucursal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalSucursal">&times;</span>
+            <h2 id="modalTitleSucursal">Agregar Sucursal</h2>
+            <input type="text" id="nombreSucursal" placeholder="Nombre de la sucursal">
+            <input type="text" id="localidadSucursal" placeholder="Localidad">
+            <button id="btnGuardarSucursal">Guardar</button>
+            <div id="miembrosContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

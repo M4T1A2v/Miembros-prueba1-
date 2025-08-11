@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0002;
+}
+h1 {
+    text-align: center;
+}
+
+.btnAgregarSucursal {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.sucursal-card {
+    background: #e3eaff;
+    margin: 12px 0;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px #0001;
+}
+.sucursal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sucursal-header button {
+    margin-left: 8px;
+}
+.miembros-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.miembro-item {
+    margin-bottom: 4px;
+}
+button {
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover {
+    background: #357ab8;
+}
+input[type="text"] {
+    width: 95%;
+    padding: 7px;
+    margin: 6px 0;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+.modal-content {
+    background: #fff;
+    margin: 60px auto;
+    padding: 24px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+}
+.close {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+#miembrosContainer {
+    margin-top: 16px;
+}
+#miembrosContainer input {
+    width: 70%;
+    margin-right: 4px;
+}
