@@ -1,29 +1,125 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistema de Sucursales</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miembros</title>
+  
 </head>
 <body>
-    <div class="container">
-        <h1>Sistema de Iglesia</h1>
-        <button id="btnAgregarSucursal" class="btnAgregarSucursal">Agregar Sucursal</button>
-        <div id="sucursales"></div>
-    </div>
-
-    <!-- Modal para agregar/editar sucursal -->
-    <div id="modalSucursal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalSucursal">&times;</span>
-            <h2 id="modalTitleSucursal">Agregar Sucursal</h2>
-            <input type="text" id="nombreSucursal" placeholder="Nombre de la sucursal">
-            <input type="text" id="localidadSucursal" placeholder="Localidad">
-            <button id="btnGuardarSucursal">Guardar</button>
-            <div id="miembrosContainer"></div>
+  <div class="app">
+    <!-- LOGIN / INICIO -->
+    <section id="view-login" class="card">
+      <div class="center">
+        <h1>Sistema de Sucursales</h1>
+        <p>Ingresá tu <b>código de acceso</b>. Escribí <code>FIN</code> para salir.</p>
+        <div class="row" style="width:100%; max-width:480px">
+          <input id="inpCodigo" placeholder="Código" style="flex:1" />
+          <button id="btnLogin">Ingresar</button>
         </div>
-    </div>
+        <small>Admin por defecto: <b>0031</b> · Rol nacional: <b>3214</b></small>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- MENU ADMIN (códigos permitidos) -->
+    <section id="view-admin" class="card hidden">
+      <div class="toolbar">
+        <div>
+          <h2>Panel Admin</h2>
+          <small class="muted">Código validado en lista de permitidos</small>
+        </div>
+        <div class="row">
+          <button class="secondary" id="btnAdminLogout">Cerrar sesión</button>
+        </div>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Acciones</h3>
+          <div class="row" style="gap:8px; flex-wrap:wrap">
+            <button id="btnListCodigos">Ver códigos de sucursal</button>
+            <button id="btnListSucursales">Ver sucursales</button>
+            <button id="btnAddSucursal">Agregar sucursal</button>
+            <button id="btnDeleteSucursal" class="danger">Eliminar sucursal</button>
+            <button id="btnEditSucursal">Editar sucursal</button>
+          </div>
+          <div class="sep"></div>
+          <div id="adminOutput" class="notice">Elegí una acción…</div>
+        </div>
+        <div class="card">
+          <h3>Nueva sucursal</h3>
+          <div class="grid">
+            <input id="sucNombre" placeholder="Nombre" />
+            <input id="sucUbicacion" placeholder="Ubicación" />
+            <input id="sucCodigo" placeholder="Código de acceso de la sucursal" />
+            <button id="btnCrearSucursal">Crear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROL NACIONAL: gestión integral -->
+    <section id="view-nacional" class="card hidden">
+      <div class="toolbar">
+        <div>
+          <h2>Panel Rol Nacional</h2>
+          <small>Gestioná sucursales (agregar, editar, eliminar)</small>
+        </div>
+        <button class="secondary" id="btnNacionalLogout">Cerrar sesión</button>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Listado de sucursales</h3>
+          <div id="nacionalLista" class="notice">Sin datos</div>
+        </div>
+        <div class="card">
+          <h3>Agregar / Editar sucursal</h3>
+          <div class="grid">
+            <input id="nacNombre" placeholder="Nombre" />
+            <input id="nacUbicacion" placeholder="Ubicación" />
+            <input id="nacCodigo" placeholder="Código" />
+            <div class="row">
+              <button id="btnNacAgregar">Agregar</button>
+              <button id="btnNacEditar" class="secondary">Editar seleccionada</button>
+              <button id="btnNacEliminar" class="danger">Eliminar seleccionada</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISTA SUCURSAL (al ingresar con código de sucursal) -->
+    <section id="view-sucursal" class="card hidden">
+      <div class="toolbar">
+        <div>
+          <h2 id="sucTitle">Sucursal</h2>
+          <small id="sucSub">Ubicación • Miembros</small>
+        </div>
+        <button class="secondary" id="btnSucLogout">Cerrar sesión</button>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Miembros</h3>
+          <div class="row">
+            <button id="btnMiembroAgregar">Agregar miembro</button>
+          </div>
+          <div class="sep"></div>
+          <div id="miembrosTabla"></div>
+        </div>
+        <div class="card">
+          <h3>Editar sucursal</h3>
+          <div class="grid">
+            <input id="editNombre" placeholder="Nombre" />
+            <input id="editUbicacion" placeholder="Ubicación" />
+            <button id="btnGuardarSucursal" class="secondary">Guardar datos</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+<script src="script.js"></script>
 </body>
 </html>
